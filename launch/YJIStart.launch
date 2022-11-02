@@ -1,0 +1,16 @@
+<launch>
+
+    <node name = "YJI" pkg = "YJI" type = "main" respawn = "true" output = "screen">
+    </node> 
+
+    <node pkg="ros_agv3_msg"     type="ros_agv3_talker" name="publish_agv_msg" output="screen">
+        <param name="smoother_cmd_vel"   type="string" value="cmd_vel"/>
+        <param name="usart_port"         type="string" value="/dev/ttyUSB0"/>
+        <param name="baud_data"          type="int"    value="115200"/>
+    </node>
+        
+
+
+    <!-- <node name = "PubRelaPos" pkg = "car_control" type = "TCPClient" respawn = "true">
+        </node> -->
+</launch>
