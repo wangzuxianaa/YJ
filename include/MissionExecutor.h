@@ -2,8 +2,13 @@
 #define MISSIONEXECUTOR_H
 
 #include "MissionPlanner.h"
+#include "Common.h"
 
+#include <json/json.h>
+#include <cpr/cpr.h>
 #include <string>
+#include <iostream>
+
 
 
 namespace YJ
@@ -14,7 +19,7 @@ class MissionExecutor
 public:
     MissionExecutor();
 
-    void AddTask(std::string& start, std::string& goal);
+    bool AddTask(std::string& start, std::string& goal);
 
     void Run();
 

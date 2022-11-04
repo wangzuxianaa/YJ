@@ -45,6 +45,15 @@ struct AGVVel
     float Angular;
 };
 
+// 任务点信息
+struct MissionPoint
+{
+    // 起始库位点，终点库位点和高度信息
+    std::string start;
+    std::string goal;
+    float height;
+};
+
 // 底盘小车数据回传
 struct AGVInfo
 {
@@ -65,11 +74,17 @@ struct AGVInfo
 // 底盘回传的AGV信息
 extern AGVInfo AGV_Info;
 
+// 小车位置信息
 extern AGVPos AGV_Pos;
 
+// 小车速度信息
 extern AGVVel AGV_Vel;
 
+// 充电开关
 extern bool ChargerSwitch;
+
+// UAV完成调整的标志位
+extern bool UAVAdjustmentFinshFlag;
 
 // 小车信息 锁
 extern std::mutex mMutexAGVInfo;
@@ -79,6 +94,11 @@ extern std::mutex mMutexAGVVel;
 
 // 小车位置 锁
 extern std::mutex mMutexAGVPos;
+
+// 调整标志位锁
+extern std::mutex mMutexUAVAdjustmentFlag;
+
+
 
 }
 
